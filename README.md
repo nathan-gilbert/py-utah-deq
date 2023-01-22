@@ -9,4 +9,4 @@ TBD
 
 ## Usage
 
-TBD
+`python3 example.py`
