@@ -14,8 +14,18 @@ class UtahDEQ:
 
     def get_latest_aqi(self) -> AQIMetric:
         """
-        Get the most recent AQI data for the given Feed Id.
+        Get the most recent AQI data for the given feed id.
+
         :return:
         :rtype: AQIMetric
         """
         return self.__deq_api.get_current_aqi()
+
+    def get_deq_feed_id(self) -> str:
+        """
+        Returns the current feed id.
+
+        :return:
+        :rtype: str
+        """
+        return self.__deq_api.feed_id

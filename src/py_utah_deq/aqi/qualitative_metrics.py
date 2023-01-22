@@ -38,6 +38,7 @@ def ozone_qualitative_metrics(ozone_level: float) -> MetricDescription:
         return UNHEALTHY3
     if ozone_level > 0.2:
         return HAZARDOUS
+    raise NotImplementedError
 
 
 def pm25_qualitative_metrics(pm25_level: float) -> MetricDescription:
@@ -61,3 +62,4 @@ def pm25_qualitative_metrics(pm25_level: float) -> MetricDescription:
         return UNHEALTHY3
     if pm25_level > 250.4:
         return HAZARDOUS
+    raise NotImplementedError

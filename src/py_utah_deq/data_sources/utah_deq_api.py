@@ -16,16 +16,23 @@ class UtahDEQAPI:
     Implementation Utah's DEQ AQI API
     """
     def __init__(self, feed_id: str = 'nr'):
-        self.__feed_id = feed_id
-        self.__api_url = f"https://air.utah.gov/csvFeed.php?id={self.__feed_id}"
-        self.__timestamp_format = "%m/%d/%Y %H:%M:%S"
+        self.__feed_id: str = feed_id
+        self.__api_url: str = f"https://air.utah.gov/csvFeed.php" \
+                              f"?id={self.__feed_id}"
+        self.__timestamp_format: str = "%m/%d/%Y %H:%M:%S"
 
     @property
-    def feed_id(self):
+    def feed_id(self) -> str:
+        """
+        The feed id is the data from which data is supplied.
+
+        :return:
+        :rtype: None
+        """
         return self.__feed_id
 
     @feed_id.setter
-    def feed_id(self, new_feed_id: str):
+    def feed_id(self, new_feed_id: str) -> None:
         self.__feed_id = new_feed_id
         self.__api_url = f"https://air.utah.gov/csvFeed.php?id={self.__feed_id}"
 
@@ -55,9 +62,9 @@ class UtahDEQAPI:
                     pm25_24hr=float(row["pm25_24hr_avg"]),
                     pm25_24hr_level=pm25_qualitative_metrics(
                         float(row["pm25_24hr_avg"])),
-                    nox=float(row["nox"]),
-                    no2=float(row["no2"]),
-                    co=float(row["co"]),
+                    nitrogen_oxide=float(row["nox"]),
+                    nitrogen_dioxide=float(row["no2"]),
+                    carbon_monoxide=float(row["co"]),
                     timestamp=datetime.strptime(
                         row["dtstamp"],
                         self.__timestamp_format
