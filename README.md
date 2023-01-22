@@ -1,2 +1,12 @@
-# py-aqi
-Python library for accessing Air Quality Indices for a specific location.
+# py-utah-deq
+
+Python library for accessing Air Quality Metrics from the Utah Department of 
+Environmental Quality.
+
+## Installation 
+
+TBD
+
+## Usage
+
+TBD

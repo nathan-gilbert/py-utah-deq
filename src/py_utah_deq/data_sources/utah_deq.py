@@ -6,7 +6,7 @@ from typing import Any
 
 import requests
 
-from src.py_aqi.plugins.data_sources.data_source import DataSource
+from src.py_utah_deq.data_sources.data_source import DataSource
 
 
 class UtahDEQ(DataSource):
