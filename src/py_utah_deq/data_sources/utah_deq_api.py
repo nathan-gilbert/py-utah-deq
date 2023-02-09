@@ -9,6 +9,7 @@ import requests
 from src.py_utah_deq.aqi.qualitative_metrics import ozone_qualitative_metrics, \
     pm25_qualitative_metrics
 from src.py_utah_deq.aqi.aqi_metric import AQIMetric
+from src.py_utah_deq.data_sources.feeds import Feeds
 
 
 class UtahDEQAPI:
